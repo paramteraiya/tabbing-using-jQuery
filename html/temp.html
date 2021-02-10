@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale" />
+    <title>Task-1</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="tabs">
+      <button class="tabButton" onclick="tab(event,'one')">One</button>
+      <button class="tabButton" onclick="tab(event,'two')">Two</button>
+      <button class="tabButton" onclick="tab(event,'three')">Three</button>
+      <button class="tabButton" onclick="tab(event,'four')">Four</button>
+    </div>
+
+    <div id="one" class="tabContent">
+      <h1>1st tab</h1>
+    </div>
+    <div id="two" class="tabContent">
+      <h1>2nd tab</h1>
+    </div>
+    <div id="three" class="tabContent">
+      <h1>3rd tab</h1>
+    </div>
+    <div id="four" class="tabContent">
+      <h1>4th tab</h1>
+    </div>
+  </body>
+
+  <script>
+    <script>
+      $(document).ready(function () {
+        $(".tabButton").click(function () {
+          $(".tabButton").not($(this).addClass("active")).removeClass("active");
+          $(".tabContent").not($("#" + $(this).attr("id") + "Content").fadeIn("slow")).fadeOut(0);});
+      });
+    </script>
+</html>
